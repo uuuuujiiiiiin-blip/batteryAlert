@@ -70,12 +70,11 @@ KAKAO_REST_KEY=발급받은_REST_API_키
 ## 앱 실행 방법
 
 ### APK로 바로 실행
-1. 저장소의 `apk/REVOLT_방전알리미_release.apk`를 내려받습니다.
+1. 저장소의 `apk/revolt_battery_alert.apk`를 내려받습니다.
 2. Pleos Connect 에뮬레이터를 켠 상태에서 설치합니다.
    ```
-   adb install REVOLT_방전알리미_release.apk
+   adb install revolt_battery_alert.apk
    ```
-   한글 파일 이름 때문에 설치가 안 되면, 파일 이름을 영어(예: `revolt.apk`)로 바꾼 뒤 설치해 주세요.
 3. 위의 "실행에 필요한 설정" 1·2번을 실행한 뒤 앱을 엽니다.
 
 ### 소스에서 빌드
@@ -98,7 +97,7 @@ KAKAO_REST_KEY=발급받은_REST_API_키
 
 ## APK 다운로드
 
-- 저장소 내 위치: `apk/REVOLT_방전알리미_release.apk`
+- 저장소 내 위치: [`apk/revolt_battery_alert.apk`](apk/revolt_battery_alert.apk)
 
 ---
 
