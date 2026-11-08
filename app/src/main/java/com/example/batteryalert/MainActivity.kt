@@ -1,0 +1,36 @@
+package com.example.batteryalert
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
+import androidx.compose.ui.Modifier
+import com.example.batteryalert.ui.theme.BatteryAlertTheme
+
+class MainActivity : ComponentActivity() {
+
+    private lateinit var vehicle: PleosVehicleSource
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        vehicle = PleosVehicleSource(this)
+        vehicle.start()
+
+        enableEdgeToEdge()
+        setContent {
+            BatteryAlertTheme {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    AppScreen(vehicle, Modifier.padding(innerPadding))
+                }
+            }
+        }
+    }
+
+    override fun onDestroy() {
+        vehicle.stop()   // 앱 꺼질 때 SDK 정리
+        super.onDestroy()
+    }
+}
